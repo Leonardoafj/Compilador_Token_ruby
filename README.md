@@ -33,19 +33,21 @@ Gera tokens assinados com HMAC-SHA256, com expiração automática, e permite va
   ```bash
   git clone 
   cd token-compiler
-   
+  ``` 
 2. **Instale as dependências**
+  ```bash
   bundle install
-
+```
 3. **Configure a chave secreta**
+   
   cp .env.example .env
     # Edite .env e defina TOKEN_SECRET com uma chave forte
-    # Dica: use `ruby -r securerandom -e "puts SecureRandom.hex(32)"`
+    # Dica: use ``` `ruby -r securerandom -e "puts SecureRandom.hex(32)"` ```
 
-4. **Inicie o servidor**
+5. **Inicie o servidor**
   ruby app.rb
 
-5. **Acesse: http://localhost:4567**
+6. **Acesse: http://localhost:4567**
 
 
 
