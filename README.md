@@ -1,5 +1,13 @@
 # 🔐 Token Compiler — Assinatura Digital Simulada (Portfólio)
 
+## Artigo Proposto pelo professor
+[Artigo Compiladores - Leonardo de Arruda Figueiredo Junior.docx](https://github.com/user-attachments/files/23467299/Artigo.Compiladores.-.Leonardo.de.Arruda.Figueiredo.Junior.docx)
+
+## Resumo das unidades 3/4 pedidos pelo professor
+[Resumo das unidades 3_4  -Leonardo de Arruda Figueiredo Junior.docx](https://github.com/user-attachments/files/23467316/Resumo.das.unidades.3_4.-Leonardo.de.Arruda.Figueiredo.Junior.docx)
+
+
+
 ![Ruby](https://img.shields.io/badge/Ruby-3.2%2B-red?logo=ruby)
 ![Sinatra](https://img.shields.io/badge/Sinatra-4.x-blue?logo=sinatra)
 ![License](https://img.shields.io/badge/License-MIT-green)
