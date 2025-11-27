@@ -2,8 +2,8 @@ FROM ruby:3.2
 
 WORKDIR /app
 
-# Instale dependências de sistema, se necessário (exemplo para sqlite3 ou pg)
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
+# Adicione esta linha para resolver a falha de Build/Compilação de Gems
+RUN apt-get update -qq && apt-get install -y build-essential libssl-dev libpq-dev
 
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
@@ -16,5 +16,5 @@ EXPOSE 8080
 # Sinatra precisa receber a porta do Fly
 ENV PORT=8080
 
-# Diga ao rackup para usar o arquivo 'app.rb'
-CMD ["bundle", "exec", "rackup", "app.rb"]
+# Removendo o 'app.rb' daqui para usar o padrão config.ru (ou deixar o Sinatra se bindar)
+CMD ["bundle", "exec", "rackup", "-p", "8080", "-o", "0.0.0.0"]
