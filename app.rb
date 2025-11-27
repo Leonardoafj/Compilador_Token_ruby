@@ -5,10 +5,10 @@ require 'openssl'
 require 'time'
 require 'dotenv/load'
 
-set :allowed_hosts, ["compilador-token-ruby.fly.dev"]
 set :port, ENV.fetch('PORT', 4567)
 set :bind, '0.0.0.0'
-
+set :allowed_hosts, ["compilador-token-ruby.fly.dev"]
+set :protection, except: :host_header
 
 puts "Variáveis de ambiente disponíveis:"
 puts ENV.select { |k,_| k.include?('TOKEN') }.inspect
