@@ -7,19 +7,21 @@ app = "compilador-token-ruby"
 primary_region = "gru"
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = "Dockerfile"
 
 [processes]
-  web = "bundle exec rackup -p 8080 -o 0.0.0.0"
+  # ALTERAÇÃO CRUCIAL: Rackup agora confia nas variáveis de ambiente e no app.rb
+  web = "bundle exec rackup" 
 
 [http_service]
-  internal_port = 8080
-  force_https = true
-  auto_start_machines = true
-  auto_stop_machines = "stop"
-  processes = ["web"]
+  # A porta interna aqui é 8080, que será lida pelo ENV['PORT']
+  internal_port = 8080 
+  force_https = true
+  auto_start_machines = true
+  auto_stop_machines = "stop"
+  processes = ["web"]
 
 [vm]
-  cpu_kind = "shared"
-  cpus = 1
-  memory_mb = 1024
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024

@@ -13,4 +13,5 @@ EXPOSE 8080
 # Sinatra precisa receber a porta do Fly
 ENV PORT=8080
 
-CMD ["bundle", "exec", "rackup", "-p", "8080", "-o", "0.0.0.0"]
+# ALTERAÇÃO CRUCIAL: Rackup agora confia nas variáveis de ambiente
+CMD ["bundle", "exec", "rackup"]

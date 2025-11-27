@@ -5,9 +5,11 @@ require 'openssl'
 require 'time'
 require 'dotenv/load'
 
-set :port, ENV.fetch('PORT', 4567)
+# Use 8080 para bater com o Dockerfile e fly.toml
+set :port, ENV.fetch('PORT', 8080) 
 set :bind, '0.0.0.0'
-set :protection, false 
+# ESSENCIAL: Permite o Host externo do Fly.io
+set :protection, except: [:host_header, :http_origin]
 
 puts "Variáveis de ambiente disponíveis:"
 puts ENV.select { |k,_| k.include?('TOKEN') }.inspect
