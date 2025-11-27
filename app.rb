@@ -5,6 +5,7 @@ require 'openssl'
 require 'time'
 require 'dotenv/load'
 
+set :allowed_hosts, ["compilador-token-ruby.fly.dev"]
 set :port, ENV.fetch('PORT', 4567)
 set :bind, '0.0.0.0'
 
