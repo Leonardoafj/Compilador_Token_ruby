@@ -22,4 +22,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Comando de Inicialização (Voltando ao padrão mais simples que confia no config.ru)
-CMD ["bundle", "exec", "rackup"]
+CMD ["/usr/local/bin/rackup", "-o", "0.0.0.0", "-p", "8080"]
