@@ -6,6 +6,9 @@ require 'openssl'
 require 'time'
 require 'dotenv/load'
 
+set :bind, '0.0.0.0'
+set :port, ENV.fetch('PORT', 4567)
+
 
 puts "Variáveis de ambiente disponíveis:"
 puts ENV.select { |k,_| k.include?('TOKEN') }.inspect
