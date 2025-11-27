@@ -10,13 +10,11 @@ primary_region = "gru"
   dockerfile = "Dockerfile"
 
 [processes]
-  # Certifique-se que o comando usa a nova porta
-  web = "bundle exec rackup -p 4567 -o 0.0.0.0" 
+  web = "bundle exec rackup -p 8080 -o 0.0.0.0"
 
 [http_service]
-  # A porta interna aqui DEVE ser 4567
-  internal_port = 4567
-  force_https = true
+  internal_port = 8080
+  force_https = true
   auto_start_machines = true
   auto_stop_machines = "stop"
   processes = ["web"]
