@@ -7,7 +7,7 @@ app = "compilador-token-ruby"
 primary_region = "gru"
 
 [build]
-  image = "ruby:3.2"
+  dockerfile = "Dockerfile"
 
 [processes]
   web = "bundle exec rackup -p 8080 -o 0.0.0.0"
@@ -15,11 +15,11 @@ primary_region = "gru"
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = "stop"
   auto_start_machines = true
+  auto_stop_machines = "stop"
   processes = ["web"]
 
-[[vm]]
+[vm]
   cpu_kind = "shared"
   cpus = 1
   memory_mb = 1024

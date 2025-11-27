@@ -7,7 +7,10 @@ RUN bundle install
 
 COPY . .
 
-EXPOSE 4567
+# Fly.io usa a porta 8080
+EXPOSE 8080
 
-CMD ["ruby", "app.rb"]
+# Sinatra precisa receber a porta do Fly
+ENV PORT=8080
 
+CMD ["bundle", "exec", "rackup", "-p", "8080", "-o", "0.0.0.0"]
