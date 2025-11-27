@@ -13,5 +13,5 @@ EXPOSE 8080
 # Sinatra precisa receber a porta do Fly
 ENV PORT=8080
 
-# ALTERAÇÃO CRUCIAL: Rackup agora confia nas variáveis de ambiente
-CMD ["bundle", "exec", "rackup"]
+# Diga ao rackup para usar o arquivo 'app.rb'
+CMD ["bundle", "exec", "rackup", "app.rb"]

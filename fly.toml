@@ -11,7 +11,7 @@ primary_region = "gru"
 
 [processes]
   # ALTERAÇÃO CRUCIAL: Rackup agora confia nas variáveis de ambiente e no app.rb
-  web = "bundle exec rackup" 
+  web = "bundle exec rackup app.rb"
 
 [http_service]
   # A porta interna aqui é 8080, que será lida pelo ENV['PORT']
