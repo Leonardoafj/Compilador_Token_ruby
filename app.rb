@@ -7,7 +7,7 @@ require 'dotenv/load'
 
 set :port, ENV.fetch('PORT', 4567)
 set :bind, '0.0.0.0'
-set :protection, except: [:host_header, :host_authorization, :http_origin, :remote_token]
+
 
 puts "Variáveis de ambiente disponíveis:"
 puts ENV.select { |k,_| k.include?('TOKEN') }.inspect
