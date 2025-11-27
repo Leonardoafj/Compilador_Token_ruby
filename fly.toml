@@ -7,7 +7,7 @@ app = "compilador-token-ruby"
 primary_region = "gru"
 
 [build]
-  builder = "heroku/buildpacks:20"
+  image = "ruby:3.2"
 
 [processes]
   web = "bundle exec rackup -p 8080 -o 0.0.0.0"
