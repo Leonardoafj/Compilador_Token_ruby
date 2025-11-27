@@ -5,7 +5,7 @@ require 'openssl'
 require 'time'
 require 'dotenv/load'
 
-set :port, ENV.fetch('PORT', 8080) 
+set :port, ENV.fetch('PORT', 4567)
 set :bind, '0.0.0.0'
 # ESSA LINHA RESOLVE O SEU PROBLEMA "HOST NOT PERMITTED"
 set :protection, except: [:host_header, :host_authorization, :http_origin]
